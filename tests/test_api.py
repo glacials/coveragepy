@@ -266,7 +266,7 @@ class ApiTest(CoverageTest):
     def test_datafile_none(self):
         cov = coverage.Coverage(data_file=None)
 
-        def f1():
+        def f1():       # pragma: nested
             a = 1       # pylint: disable=unused-variable
 
         one_line_number = f1.__code__.co_firstlineno + 1
@@ -366,12 +366,12 @@ class ApiTest(CoverageTest):
         self.make_code1_code2()
         cov = coverage.Coverage()
         cov.start()
-        import_local_file("code1")                                     # pragma: nested
-        cov.save()                                                     # pragma: nested
-        import_local_file("code2")                                     # pragma: nested
-        self.check_code1_code2(cov)                                    # pragma: nested
+        import_local_file("code1")                                     # pragma: xested
+        cov.save()                                                     # pragma: xested
+        import_local_file("code2")                                     # pragma: xested
+        self.check_code1_code2(cov)                                    # pragma: xested
         # Then stop it, or the test suite gets out of whack.
-        cov.stop()                                                     # pragma: nested
+        cov.stop()                                                     # pragma: xested
 
     def test_two_getdata_only_warn_once(self):
         self.make_code1_code2()
