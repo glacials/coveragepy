@@ -125,6 +125,7 @@ jobs:
         env:
           COVERAGE_RCFILE: "metacov.ini"
           COVERAGE_METAFILE: ".metacov"
+          COVERAGE_CONTEXT: "yes"
         run: |
           set -xe
           python -m igor combine_html

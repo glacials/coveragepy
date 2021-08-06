@@ -149,7 +149,7 @@ def run_tests_with_coverage(tracer, *runner_args):
     os.environ['COVERAGE_METAFILE'] = os.path.abspath(".metacov."+suffix)
 
     import coverage
-    cov = coverage.Coverage(config_file="metacov.ini")
+    cov = coverage.Coverage(config_file="metacov.ini", debug=["config", "sys"])
     cov._warn_unimported_source = False
     cov._warn_preimported_source = False
     cov.start()
