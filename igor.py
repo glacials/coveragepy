@@ -192,7 +192,7 @@ def do_combine_html():
     cov.load()
     cov.combine()
     cov.save()
-    show_contexts = bool(os.environ.get('COVERAGE_CONTEXT'))
+    show_contexts = bool(os.environ.get('COVERAGE_DYNCTX') or os.environ.get('COVERAGE_CONTEXT'))
     cov.html_report(show_contexts=show_contexts)
     cov.xml_report()
 
